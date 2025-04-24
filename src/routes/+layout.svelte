@@ -11,7 +11,9 @@
 </header>
 
 <main>
-    <nav></nav>
+    <nav>
+
+    </nav>
     {@render children()}
 </main>
 
@@ -31,12 +33,14 @@
     }
 
     main {
+        --nav-width: 300px;
+
         width: 100%;
         height: 500px;
         background-color: aliceblue;
         /* box-sizing: border-box; */
 
         display: grid;
-        grid-template-columns: 400px calc(100% - 400px);
+        grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
     }
 </style>
