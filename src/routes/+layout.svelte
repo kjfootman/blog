@@ -1,7 +1,7 @@
 <script>
 	import Menu from "$lib/svelte/menu.svelte";
 
-	let { children } = $props();
+	let { data, children } = $props();
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 
 <main>
 	<nav>
-		<Menu menu={{}}></Menu>
+		<Menu menu={data.menu}></Menu>
 	</nav>
 	{@render children()}
 </main>
