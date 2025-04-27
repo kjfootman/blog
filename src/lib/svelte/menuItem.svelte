@@ -25,6 +25,7 @@
         align-items: center;
         font-weight: normal;
         font-size: 15px;
+        color: black;
     }
 
     div > a:visited {
