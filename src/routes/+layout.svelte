@@ -2,9 +2,31 @@
 	import Menu from "$lib/svelte/menu.svelte";
 
 	let { children } = $props();
-    const menu = {
-        title: 'Test'
+
+	const profile = {
+		title: 'My Profile',
+		menuItems: {
+			pfofile: "#"
+		}
+	}
+
+    const math_menu = {
+        title: 'Math',
+		menuItems: {
+			Chap1: '/',
+			Chap2: '/',
+			CG: '/',
+			GMRES: '/mathmatics/gmres',
+		}
     };
+	const rust_menu = {
+		title: 'Rust',
+		menuItems: {
+			Chap1: '#',
+			Chap2: '#',
+			Chap3: '#',
+		}
+	}
 </script>
 
 <svelte:head>
@@ -17,7 +39,9 @@
 
 <main>
 	<nav>
-		<Menu menu={{}}></Menu>
+		<Menu menu={ profile }></Menu>
+		<Menu menu={ math_menu }></Menu>
+		<Menu menu={ rust_menu }></Menu>
 	</nav>
 	{@render children()}
 </main>
@@ -40,10 +64,12 @@
 	}
 
 	nav {
+		display: flexbox;
 		width: 100%;
-		background-color: aqua;
 		border-right: 1px solid black;
 		box-sizing: border-box;
+
+		background-color: antiquewhite;
 	}
 
 	main {
@@ -51,7 +77,6 @@
 
 		width: 100%;
 		height: calc(100vh - var(--header-height));
-		background-color: aliceblue;
 		box-sizing: border-box;
 
 		display: grid;

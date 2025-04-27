@@ -1,21 +1,17 @@
 <script>
+    import MenuItem from "./menuItem.svelte";
+
     let { menu } = $props();
-
-    let node = menu;
-
-    // while (Object.keys(node) != null) {
-
-    // }
-    console.log(menu, typeof(menu));
+    const menuItmes = menu['menuItems'];
 </script>
 
 <details open>
     <summary>
-        Math
+        { menu['title'] }
     </summary>
-
-    <!-- <div><a href="#">PED</a></div> -->
-    <a href="#">PED</a>
+    {#each Object.entries(menuItmes) as [title, link]}
+        <MenuItem title={title} link={link}></MenuItem>
+    {/each}
 </details>
 
 <style>
@@ -24,16 +20,16 @@
 
         width: calc(100% - calc(2 * (var(--margin))));
         margin: 10px;
+        margin-top: 20px;
         box-sizing: border-box;
         font-weight: bold;
-        /* cursor: pointer; */
     }
 
-    details > a {
+    /* details > a {
         display: flex;
         width: 100%;
         text-decoration: none;
         font-weight: normal;
-    }
+    } */
 </style>
 
