@@ -2,6 +2,9 @@
 	import Menu from "$lib/svelte/menu.svelte";
 
 	let { children } = $props();
+    const menu = {
+        title: 'Test'
+    };
 </script>
 
 <svelte:head>
@@ -14,7 +17,7 @@
 
 <main>
 	<nav>
-		<Menu menu={{ }}></Menu>
+		<Menu menu={{}}></Menu>
 	</nav>
 	{@render children()}
 </main>
