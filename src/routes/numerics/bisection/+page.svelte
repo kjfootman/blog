@@ -6,18 +6,22 @@
     let { data } = $props();
 </script>
 
+<!-- <script>
+</script> -->
+
 <h1>Bisection Method</h1>
 
-<div style="width: 80%;">
+<!-- <div style="width: 80%;">
     <Prism 
         language={'rust'} 
         source={data.code}
         showCopyButton={true}
         showLineNumbers={true}
     />
-</div>
+</div> -->
 
-<!-- <code>{data.code}</code> -->
+<code>{data.code}</code>
+
  <!-- {#await data.code}
     <p>waitting</p>
  {:then code} 
