@@ -1,8 +1,3 @@
-<svelte:head>
-	<title>Sloth</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js">
-</svelte:head>
-
 <script>
 	import Menu from "$lib/svelte/menu.svelte";
 
@@ -15,6 +10,7 @@
 			projects: "/"
 		}
 	}
+
     const math_menu = {
         title: '수치해석',
 		menuItems: {
@@ -33,6 +29,10 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>Sloth</title>
+</svelte:head>
 
 <header>
 	<span class="header-title">Hello Sloth</span>
