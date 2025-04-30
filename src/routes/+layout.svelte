@@ -6,25 +6,26 @@
 	const profile = {
 		title: 'My Profile',
 		menuItems: {
-			pfofile: "#"
+			pfofile: "/",
+			projects: "/"
 		}
 	}
 
     const math_menu = {
-        title: 'Math',
+        title: '수치해석',
 		menuItems: {
-			Chap1: '/',
+			'bisection method' : '/numerics/bisection',
 			Chap2: '/',
 			CG: '/',
-			GMRES: '/mathmatics/gmres',
+			GMRES: '/numerics/gmres',
 		}
     };
 	const rust_menu = {
-		title: 'Rust',
+		title: '러스트',
 		menuItems: {
-			Chap1: '#',
-			Chap2: '#',
-			Chap3: '#',
+			설치하기: '/rust/tutorial_01',
+			변수선언: '/',
+			Chap3: '/',
 		}
 	}
 </script>
@@ -43,7 +44,12 @@
 		<Menu menu={ math_menu }></Menu>
 		<Menu menu={ rust_menu }></Menu>
 	</nav>
-	{@render children()}
+	<!-- <div style="overflow-y: auto;">
+		{@render children()}
+	</div> -->
+	<section>
+		{@render children()}
+	</section>
 </main>
 
 <style>
@@ -83,6 +89,10 @@
 		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
 	}
 
+	section {
+		overflow-y: auto;
+	}
+
 	.header-title {
 		display: flex;
 		line-height: 100%;
@@ -92,4 +102,9 @@
 		/* background-color: red; */
 	}
 
+	/* @media screen and (min-width: 80rem) {
+		nav {
+			background-color: red;
+		}
+	} */
 </style>

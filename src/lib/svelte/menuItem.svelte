@@ -28,7 +28,12 @@
         color: black;
     }
 
-    div > a:visited {
-        color: black;
+    div > a:hover {
+        color: red;
+        font-weight: bold;
     }
+
+    /* div > a:visited {
+        color: black;
+    } */
 </style>
