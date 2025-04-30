@@ -32,6 +32,7 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"@magidoc/plugin-svelte-prismjs": "^6.2.0",
 		"plotly.js-dist": "^3.0.1",
 		"yaml": "^2.7.1"
 	}
