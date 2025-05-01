@@ -8,14 +8,12 @@
 
 <h1>Bisection Method</h1>
 
-<div style="width: 80%;">
-    <Prism 
-        language={'rust'} 
-        source={data.code}
-        showCopyButton={true}
-        showLineNumbers={true}
-    />
-</div>
+<Prism 
+    language={'rust'} 
+    source={data.code}
+    showCopyButton={true}
+    showLineNumbers={true}
+/>
 
 <!-- <code>{data.code}</code> -->
  <!-- {#await data.code}
