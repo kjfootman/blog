@@ -8,7 +8,7 @@
 
 <h1>Bisection Method</h1>
 
-<Prism 
+<Prism
     language={'rust'} 
     source={data.code}
     showCopyButton={true}
