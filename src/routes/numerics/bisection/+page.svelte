@@ -8,7 +8,7 @@
 
 <h1>Bisection Method</h1>
 
-<div style="font-size: 15px;">
+<div style="font-size: 0.8rem;">
     <Prism 
         language={'rust'} 
         source={data.code}
