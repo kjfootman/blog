@@ -53,7 +53,7 @@ mod tests {
 
         let solution = bisec(low, high, func, iMax, criterion)?;
 
-        println!("{solution:.4}");
+        println!("\nsolution: {solution:.4}");
 
         Ok(())
     }

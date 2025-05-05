@@ -33,6 +33,7 @@
 	},
 	"dependencies": {
 		"@magidoc/plugin-svelte-prismjs": "^6.2.0",
+		"katex": "^0.16.22",
 		"plotly.js-dist": "^3.0.1",
 		"yaml": "^2.7.1"
 	}
