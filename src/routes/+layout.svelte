@@ -15,7 +15,7 @@
         title: '수치해석',
 		menuItems: {
 			'bisection method' : '/numerics/bisection',
-			Chap2: '/',
+			'newton': '/numerics/newton-method',
 			CG: '/',
 			GMRES: '/numerics/gmres',
 		}
