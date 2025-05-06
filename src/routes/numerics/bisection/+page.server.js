@@ -1,5 +1,4 @@
 import { error } from '@sveltejs/kit';
-import katex from 'katex';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
@@ -10,14 +9,13 @@ export async function load() {
 
     const text = await res.text();
 
-    let html = katex.renderToString("c = \\pm\\sqrt{a^2 + b^2}", {
-        throwOnError: false
-    })
-
-    console.log(html);
+    // let html = katex.renderToString("c = \\pm\\sqrt{a^2 + b^2}", {
+    //     throwOnError: false,
+    //     globalGroup: true
+    // })
 
     return {
         code: text,
-        html: html
+        // html: html
     }
 }
