@@ -2,7 +2,9 @@
     import Prism from "@magidoc/plugin-svelte-prismjs";
     import 'prismjs/components/prism-rust';
     import 'prismjs/themes/prism-tomorrow.css';
-    // import Katex from 'svelte-katex';
+    import katex from "katex";
+
+    const html = katex.renderToString(String.raw`c = \pm\sqrt{a^2 + b^2}`);
 
     let { data } = $props();
 </script>
@@ -16,8 +18,8 @@
     a와 b의 중간 값 mid = 0.5 * (a + b)에 대해 f(a) * f(mid) &#60; 0 일 경우 b = mid
 </span><br>
 
-<!-- <Katex>ax^2+bx+c=0</Katex>
-<Katex>\sqrt{2}</Katex> -->
+<!-- <Katex>ax^2+bx+c=0</Katex> -->
+ {@html html}
 
 <Prism 
     language={'rust'} 
