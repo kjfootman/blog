@@ -14,6 +14,9 @@
 		"lint": "prettier --check . && eslint ."
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.27.2",
+		"@babel/core": "^7.27.1",
+		"@babel/preset-env": "^7.27.2",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@sveltejs/adapter-auto": "^4.0.0",
@@ -32,9 +35,9 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
-		"@magidoc/plugin-svelte-prismjs": "^6.2.0",
 		"katex": "^0.16.22",
 		"plotly.js-dist": "^3.0.1",
+		"prismjs": "^1.30.0",
 		"yaml": "^2.7.1"
 	}
 }
