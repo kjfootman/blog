@@ -16,16 +16,18 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
-		"@sveltejs/adapter-auto": "^4.0.0",
+		"@magidoc/plugin-svelte-prismjs": "^6.2.0",
 		"@sveltejs/adapter-vercel": "^5.7.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@types/prismjs": "^1.26.5",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
+		"prismjs": "^1.30.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
@@ -34,7 +36,6 @@
 	"dependencies": {
 		"katex": "^0.16.22",
 		"plotly.js-dist": "^3.0.1",
-		"prismjs": "^1.30.0",
 		"yaml": "^2.7.1"
 	}
 }

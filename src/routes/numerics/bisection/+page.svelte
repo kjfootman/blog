@@ -1,8 +1,7 @@
 <script>
-	import Prism from 'prismjs';
+	import Prism from '@magidoc/plugin-svelte-prismjs';
 	import 'prismjs/components/prism-rust';
-	import 'prismjs/themes/prism.css';
-	import 'prismjs/themes/prism-tomorrow.css';
+	import 'prismjs/themes/prism-tomorrow.min.css';
 
 	import katex from 'katex';
 	import 'katex/dist/katex.min.css';
@@ -15,10 +14,7 @@
 	/** @type {HTMLElement} */
 	let eq2;
 
-
 	onMount(() => {
-		Prism.highlightAll();
-
 		katex.render(
 			String.raw`
                 \mathcal{mid} =
@@ -54,20 +50,9 @@
 	a와 b의 중간 값 mid = 0.5 * (a + b)에 대해 f(a) * f(mid) &#60; 0 일 경우 b = mid
 </span><br />
 
-<!-- <Katex>ax^2+bx+c=0</Katex> -->
 {@html html}
-<div>
-<pre><code class="language-rust">let x = 3;</code></pre>
-</div>
 
-<!-- <br><span bind:this={eq1}></span> -->
 <div bind:this={eq1}></div>
 <div bind:this={eq2}></div>
 
-<!-- <Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} /> -->
-
-<!-- <style>
-    .text {
-        display: block;
-    }
-</style> -->
+<Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} />
