@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import { read } from '$app/server';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
@@ -8,6 +9,8 @@ export async function load() {
 	if (!res.ok) error(404, { message: 'Not found' });
 
 	const text = await res.text();
+
+	console.log(await read('/static/menu.yaml').text());
 
 	return {
 		code: text
