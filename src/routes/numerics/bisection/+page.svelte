@@ -56,3 +56,5 @@
 <div bind:this={eq2}></div>
 
 <Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} />
+
+<p>{data.text}</p>
