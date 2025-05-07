@@ -1,9 +1,8 @@
 <script>
-    import Prism from 'prismjs';
-    import 'prismjs/components/';
+	import Prism from 'prismjs';
+	import 'prismjs/components/prism-rust';
 	import 'prismjs/themes/prism.css';
-	// import 'prismjs/themes/prism-tomorrow.css';
-	import 'prismjs/themes/prism-dark.css';
+	import 'prismjs/themes/prism-tomorrow.css';
 
 	import katex from 'katex';
 	import 'katex/dist/katex.min.css';
@@ -16,13 +15,9 @@
 	/** @type {HTMLElement} */
 	let eq2;
 
-    const code = `let data = 1`;
-
-    /** @type {string} */
-    // @ts-ignore
-    let test = Prism.highlight(code, Prism.languages.javascript, 'rust')
 
 	onMount(() => {
+		Prism.highlightAll();
 
 		katex.render(
 			String.raw`
@@ -53,7 +48,6 @@
 <h1>Bisection Method</h1>
 
 {@html '<h1>test</h1>'}
-<pre><code class=language-rust>let x = 3;</code></pre>
 
 <span>
 	범위 [a, b]<span>test</span>에서 f(a) * f(b) &#60; 0 일 경우 해를 찾아가는 방법입니다.<br />
@@ -62,6 +56,9 @@
 
 <!-- <Katex>ax^2+bx+c=0</Katex> -->
 {@html html}
+<div>
+<pre><code class="language-rust">let x = 3;</code></pre>
+</div>
 
 <!-- <br><span bind:this={eq1}></span> -->
 <div bind:this={eq1}></div>
