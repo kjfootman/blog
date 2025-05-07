@@ -1,38 +1,43 @@
 <script>
-	import Menu from "$lib/svelte/menu.svelte";
+	import Menu from '$lib/svelte/menu.svelte';
 
 	let { children } = $props();
 
 	const profile = {
 		title: 'My Profile',
 		menuItems: {
-			pfofile: "/",
-			projects: "/"
+			pfofile: '/',
+			projects: '/'
 		}
-	}
+	};
 
-    const math_menu = {
-        title: '수치해석',
+	const math_menu = {
+		title: '수치해석',
 		menuItems: {
-			'bisection method' : '/numerics/bisection',
-			'newton': '/numerics/newton-method',
+			'bisection method': '/numerics/bisection',
+			newton: '/numerics/newton-method',
 			CG: '/',
-			GMRES: '/numerics/gmres',
+			GMRES: '/numerics/gmres'
 		}
-    };
+	};
 	const rust_menu = {
 		title: '러스트',
 		menuItems: {
 			설치하기: '/rust/tutorial_01',
 			변수선언: '/',
-			Chap3: '/',
+			Chap3: '/'
 		}
-	}
+	};
 </script>
 
 <svelte:head>
 	<title>Sloth</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+	<!-- <link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+		integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"
+		crossorigin="anonymous"
+	/> -->
 </svelte:head>
 
 <header>
@@ -41,9 +46,9 @@
 
 <main>
 	<nav>
-		<Menu menu={ profile }></Menu>
-		<Menu menu={ math_menu }></Menu>
-		<Menu menu={ rust_menu }></Menu>
+		<Menu menu={profile}></Menu>
+		<Menu menu={math_menu}></Menu>
+		<Menu menu={rust_menu}></Menu>
 	</nav>
 	<!-- <div style="overflow-y: auto;">
 		{@render children()}

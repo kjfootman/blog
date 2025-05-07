@@ -1,3 +1,1 @@
-<h1>
-    Newton mathod
-</h1>
+<h1>Newton mathod</h1>
