@@ -1,7 +1,11 @@
 import { error } from '@sveltejs/kit';
-import some_file from '$lib/somefile.txt';
 import { read } from '$app/server';
-// import rust from '$lib/rust_codes/src/bisection.rs';
+
+// function test() {
+// 	let res = fetch('', {
+// 		headers:
+// 	})
+// }
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
@@ -23,12 +27,12 @@ export async function load({ fetch }) {
 	// const item = await test2.text()
 	// console.log(item);
 
-	// let tmp = await fetch('/src/lib/rust_codes/src/bisection.rs');
-	// let test = await tmp.text();
+	let tmp = await fetch('/src/lib/rust_codes/src/bisection.rs');
+	let test = await tmp.text();
 	// console.log(test);
 
-	const test = await read('/src/lib/rust_codes/src/bisection.rs').text();
-	console.log(test);
+	// const test = await read('/src/lib/rust_codes/src/bisection.rs').text();
+	// const test = await read('/static/test.rs').text();
 
 	return {
 		code: text,
