@@ -1,12 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { read } from '$app/server';
 
-// function test() {
-// 	let res = fetch('', {
-// 		headers:
-// 	})
-// }
-
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
 	const code_url = 'https://raw.githubusercontent.com/kjfootman/blog/main/rust_codes/src/bisection.rs';
@@ -27,7 +21,8 @@ export async function load({ fetch }) {
 	// const item = await test2.text()
 	// console.log(item);
 
-	let tmp = await fetch('/src/lib/rust_codes/src/bisection.rs');
+	// let tmp = await fetch('/src/lib/rust_codes/src/bisection.rs');
+	let tmp = await fetch('/rust_codes/src/bisection.rs');
 	let test = await tmp.text();
 	// console.log(test);
 

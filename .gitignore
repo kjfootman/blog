@@ -9,6 +9,7 @@ node_modules
 /build
 # /rust_codes/target
 /src/lib/rust_codes/target
+/static/rust_codes/target
 
 # OS
 .DS_Store
