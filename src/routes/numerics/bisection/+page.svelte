@@ -5,6 +5,7 @@
 
 	import katex from 'katex';
 	import 'katex/dist/katex.min.css';
+  // import 'katex/dist/contrib/auto-render.js'
 
 	import { onMount } from 'svelte';
 
@@ -43,18 +44,42 @@
 
 <h1>Bisection Method</h1>
 
-{@html '<h1>test</h1>'}
-
 <span>
-	범위 [a, b]<span>test</span>에서 f(a) * f(b) &#60; 0 일 경우 해를 찾아가는 방법입니다.<br />
-	a와 b의 중간 값 mid = 0.5 * (a + b)에 대해 f(a) * f(mid) &#60; 0 일 경우 b = mid
-</span><br />
+	범위 
+  {@html katex.renderToString(String.raw`[a, b]`, {
+    throwOnError: false
+  })} 에서 
+  {@html katex.renderToString(String.raw`f(a) * f(b) < 0`, {
+    throwOnError: false
+  })} 일 경우 해를 찾아가는 방법입니다.<br/>
+  {@html katex.renderToString(String.raw`a`, {
+    throwOnError: false
+  })} 와
+  {@html katex.renderToString(String.raw`b`, {
+    throwOnError: false
+  })} 의 중간 값 
+  {@html katex.renderToString(String`mid`, {
+    throwOnError: false
+  })} 에 대해 
+  {@html katex.renderToString(String.raw`f(mid)`, {
+    throwOnError: false
+  })} 의 조건에 따라 반복적으로 a 또는 b를 할당 합니다.
+</span><br/>
+<span>
 
-{@html html}
+</span>
 
 <div bind:this={eq1}></div>
 <div bind:this={eq2}></div>
 
+{@html html}
+
 <Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} />
 
-<p>{data.text}</p>
+<p>{data.code}</p>
+
+<style>
+	span {
+		line-height: 30px;
+	}
+</style>
