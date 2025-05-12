@@ -1,5 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { read } from '$app/server';
+// import { base}
+import { assets } from '$app/paths';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
@@ -10,28 +12,14 @@ export async function load({ fetch }) {
 
 	const text = await res.text();
 
-	// const test = await read(some_file).text();
-	// console.log(test);
-
-	// const test2 = await fetch(some_file);
-	// const item = await test2.text()
-	// console.log(item);
-
-	// const test2 = await fetch(rust);
-	// const item = await test2.text()
-	// console.log(item);
-
 	// let tmp = await fetch('/src/lib/rust_codes/src/bisection.rs');
-	let tmp = await fetch('/rust_codes/src/bisection.rs');
-	let test = await tmp.text();
+	// let tmp = await fetch('/rust_codes/src/bisection.rs');
+	// let test = await tmp.text();
 	// console.log(test);
-
-	// const test = await read('/src/lib/rust_codes/src/bisection.rs').text();
-	// const test = await read('/static/test.rs').text();
 
 	return {
 		code: text,
 		// html: html
-		text: test
+		text: ''
 	};
 }
