@@ -58,10 +58,6 @@
 		padding: 0;
 	}
 
-	:global(.katex) {
-		font-size: 17px;
-	}
-
 	header {
 		width: 100%;
 		height: var(--header-height);

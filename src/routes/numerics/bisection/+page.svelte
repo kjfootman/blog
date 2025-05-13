@@ -36,9 +36,9 @@
 <h1>Bisection Method</h1>
 
 <p>
-	범위 <span class="tex">$[a, b]$</span> 내에서 <span>$f(a) * f(b) &lt; 0$</span> 일 경우 해를 찾아가는 방법입니다.<br/>
-	<span>$a$</span> 와 <span>$b$</span>의 중간 값 <span>$mid$</span> 에 대해
-	<span>$f(mid)$</span> 와 <span>$f(a)$</span> 및 <span>$f(b)$</span>
+	범위 <i>$[a, b]$</i> 내에서 <i>$f(a) * f(b) &lt; 0$</i> 일 경우 해를 찾아가는 방법입니다.<br/>
+	<i>$a$</i> 와 <i>$b$</i>의 중간 값 <i>$mid$</i> 에 대해
+	<i>$f(mid)$</i> 와 <i>$f(a)$</i> 및 <i>$f(b)$</i>
 	의 관계에 따라 반복적으로 a 와 b를 할당 합니다.
 </p>
 
