@@ -1,15 +1,13 @@
-<script module>
+<script>
 	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
 	import 'prismjs/components/prism-rust';
+	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
+	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css';
 
-</script>
-
-<script>
 	// import Prism from '@magidoc/plugin-svelte-prismjs';
 	// import 'prismjs/components/prism-rust';
 	// import 'prismjs/themes/prism-tomorrow.min.css';
-
 
 	import katex from 'katex';
 	import 'katex/dist/katex.min.css';
@@ -26,8 +24,10 @@
 	// @ts-ignore
 	let tmp = Prism.highlight('let x = 3;', Prism.languages.rust, 'rust');
 
+	// console.log(tmp);
+
 	onMount(() => {
-		// Prism.highlightAll(true);
+		Prism.highlightAll();
 
 		katex.render(
 			String.raw`
@@ -100,6 +100,12 @@
 <pre><code class="language-rust">
 	let mut x = 3;
 </code></pre>
+
+<div>
+<pre>
+	{@html tmp}
+</pre>
+</div>
 
 <!-- <Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} /> -->
 
