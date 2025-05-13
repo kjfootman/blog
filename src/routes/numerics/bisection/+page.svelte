@@ -1,11 +1,19 @@
-<script>
-	import Prism from '@magidoc/plugin-svelte-prismjs';
-	import 'prismjs/components/prism-rust';
+<script module>
+	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
+	import 'prismjs/components/prism-rust';
+
+</script>
+
+<script>
+	// import Prism from '@magidoc/plugin-svelte-prismjs';
+	// import 'prismjs/components/prism-rust';
+	// import 'prismjs/themes/prism-tomorrow.min.css';
+
 
 	import katex from 'katex';
 	import 'katex/dist/katex.min.css';
-  // import 'katex/dist/contrib/auto-render.js'
+	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
 
 	import { onMount } from 'svelte';
 
@@ -15,15 +23,20 @@
 	/** @type {HTMLElement} */
 	let eq2;
 
+	// @ts-ignore
+	let tmp = Prism.highlight('let x = 3;', Prism.languages.rust, 'rust');
+
 	onMount(() => {
+		// Prism.highlightAll(true);
+
 		katex.render(
 			String.raw`
-                \mathcal{mid} =
-                \begin{cases}
-                    a & \text{if $f(mid) * f(a) < 0$} \\
-                    b & \text{if $f(mid) * f(b) < 0$} \\
-                \end{cases}
-            `,
+        \mathcal{mid} =
+        \begin{cases}
+            a & \text{if $f(mid) * f(a) < 0$} \\
+            b & \text{if $f(mid) * f(b) < 0$} \\
+        \end{cases}
+      `,
 			eq1,
 			{ throwOnError: false }
 		);
@@ -33,10 +46,23 @@
 					a & b \\
 					c & d \\
 				\end{matrix}
-            `,
+      `,
 			eq2,
 			{ throwOnError: false }
 		);
+
+		renderMathInElement(document.body, {
+			// customised options
+			// • auto-render specific keys, e.g.:
+			delimiters: [
+				{left: '$$', right: '$$', display: true},
+				{left: '$', right: '$', display: false},
+				{left: '\\(', right: '\\)', display: false},
+				{left: '\\[', right: '\\]', display: true}
+			],
+			// • rendering keys, e.g.:
+			throwOnError : false
+		});
 	});
 
 	let { data } = $props();
@@ -44,39 +70,38 @@
 
 <h1>Bisection Method</h1>
 
-<span>
-	범위 
-  {@html katex.renderToString(String.raw`[a, b]`, {
-    throwOnError: false
-  })} 에서 
-  {@html katex.renderToString(String.raw`f(a) * f(b) < 0`, {
-    throwOnError: false
-  })} 일 경우 해를 찾아가는 방법입니다.<br/>
-  {@html katex.renderToString(String.raw`a`, {
-    throwOnError: false
-  })} 와
-  {@html katex.renderToString(String.raw`b`, {
-    throwOnError: false
-  })} 의 중간 값 
-  {@html katex.renderToString(String`mid`, {
-    throwOnError: false
-  })} 에 대해 
-  {@html katex.renderToString(String.raw`f(mid)`, {
-    throwOnError: false
-  })} 의 조건에 따라 반복적으로 a 또는 b를 할당 합니다.
-</span><br/>
-<span>
+<p>
+	범위 <span class="katex">$[a, b]$</span> 내에서 <span>$f(a) * f(b) &lt; 0$</span> 일 경우 해를 찾아가는 방법입니다.<br/>
+	<span>$a$</span> 와 <span>$b$</span>의 중간 값 <span>$mid$</span> 에 대해
+	<span>$f(mid)$</span> 와 <span>$f(a)$</span> 및 <span>$f(b)$</span>
+	의 관계에 따라 반복적으로 a 와 b를 할당 합니다.
+</p>
 
-</span>
+<p>$$test$$</p>
+<span>$c^2$</span>
 
 <div bind:this={eq1}></div>
 <div bind:this={eq2}></div>
 
+<!-- <p>
+	<span>
+		\\{matrix}
+	</span>
+</p> -->
+
+<p>
+	$\begin&#123matrix&#125;
+		a & b \\
+		c & d \\
+	\end&#123;matrix&#125;$
+</p>
+
 {@html html}
+<pre><code class="language-rust">
+	let mut x = 3;
+</code></pre>
 
-<Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} />
-
-<p>{data.code}</p>
+<!-- <Prism language={'rust'} source={data.code} showCopyButton={true} showLineNumbers={true} /> -->
 
 <style>
 	span {

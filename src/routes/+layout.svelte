@@ -52,9 +52,14 @@
 <style>
 	:global(body) {
 		--header-height: 70px;
+		--font-size: 15px;
 
 		margin: 0;
 		padding: 0;
+	}
+
+	:global(.katex) {
+		font-size: 17px;
 	}
 
 	header {
@@ -95,13 +100,6 @@
 		line-height: 100%;
 		align-items: center;
 		font-weight: bold;
-
-		/* background-color: red; */
 	}
 
-	/* @media screen and (min-width: 80rem) {
-		nav {
-			background-color: red;
-		}
-	} */
 </style>
