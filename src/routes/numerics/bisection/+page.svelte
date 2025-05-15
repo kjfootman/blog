@@ -17,7 +17,7 @@
 	onMount(() => {
 		Prism.highlightAll();
 
-		renderMathInElement(document.body, {
+		renderMathInElement(document.querySelector('p'), {
 			// customised options
 			// • auto-render specific keys, e.g.:
 			delimiters: [
@@ -27,7 +27,7 @@
 				{left: '\\[', right: '\\]', display: true}
 			],
 			// • rendering keys, e.g.:
-			throwOnError : false
+			throwOnError : true
 		});
 	});
 
@@ -36,7 +36,7 @@
 <h1>Bisection Method</h1>
 
 <p>
-	범위 <span class="tex">$[a, b]$</span> 내에서 <span>$f(a) * f(b) &lt; 0$</span> 일 경우 해를 찾아가는 방법입니다.<br/>
+	범위 <span class="katex">$[a, b]$</span> 내에서 <span>$f(a) * f(b) &lt; 0$</span> 일 경우 해를 찾아가는 방법입니다.<br/>
 	<span>$a$</span> 와 <span>$b$</span>의 중간 값 <span>$mid$</span> 에 대해
 	<span>$f(mid)$</span> 와 <span>$f(a)$</span> 및 <span>$f(b)$</span>
 	의 관계에 따라 반복적으로 a 와 b를 할당 합니다.
