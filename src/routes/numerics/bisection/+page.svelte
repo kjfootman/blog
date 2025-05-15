@@ -17,7 +17,7 @@
 	onMount(() => {
 		Prism.highlightAll();
 
-		renderMathInElement(document.querySelector('p'), {
+		renderMathInElement(document.querySelector('container'), {
 			// customised options
 			// • auto-render specific keys, e.g.:
 			delimiters: [
@@ -32,6 +32,8 @@
 	});
 
 </script>
+
+<container>
 
 <h1>Bisection Method</h1>
 
@@ -59,3 +61,4 @@
 </p>
 
 <pre><code class="language-rust line-numbers">{data.code}</code></pre>
+</container>
