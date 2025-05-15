@@ -1,16 +1,19 @@
+export const ssr = false;
+
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load() {
-	const url = 'https://raw.githubusercontent.com/kjfootman/blog/main/rust_codes/src/bisection.rs';
-	const res = await fetch(url);
+export async function load({ fetch }) {
+	const code_url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/dev/examples/bisection.rs';
+	const res = await fetch(code_url);
 
 	if (!res.ok) error(404, { message: 'Not found' });
 
 	const text = await res.text();
 
 	return {
-		code: text
+		code: text,
 		// html: html
+		text: ''
 	};
 }

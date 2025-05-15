@@ -32,9 +32,6 @@
 
 <svelte:head>
 	<title>Sloth</title>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" integrity="sha512-HiD3V4nv8fcjtouznjT9TqDNDm1EXngV331YGbfVGeKUoH+OLkRTCMzA34ecjlgSQZpdHZupdSrqHY+Hz3l6uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-scss.min.js" integrity="sha512-aczOaJ+mB9uGT6dMJbDaUsS2PWG+XII+1ypFQ0L22Z132V6kMM6m70pQssXsPAFmLI5xkgx/hknBuUuJIJKZfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpmnMt/LINrjop3GKWqsuLSSB3e7iBmYK7JuWw4ldmmxwD9mdm2IRTTi0OxSAfEGvgEi0i2Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </svelte:head>
 
 <header>
@@ -55,6 +52,7 @@
 <style>
 	:global(body) {
 		--header-height: 70px;
+		--font-size: 15px;
 
 		margin: 0;
 		padding: 0;
@@ -98,13 +96,6 @@
 		line-height: 100%;
 		align-items: center;
 		font-weight: bold;
-
-		/* background-color: red; */
 	}
 
-	/* @media screen and (min-width: 80rem) {
-		nav {
-			background-color: red;
-		}
-	} */
 </style>
