@@ -45,9 +45,7 @@
 </nav>
 
 <main>
-	<section>
-		{@render children()}
-	</section>
+	{@render children()}
 </main>
 
 
@@ -93,30 +91,9 @@
 	}
 
 	main {
-
-		/* display: flex; */
-
 		width: 100%;
-		/* height: calc(100% - var(--header-height)); */
 		box-sizing: border-box;
-
 		overflow-y: hidden;
-
-		/* display: grid;
-		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width)); */
-
-		/* background-color: aquamarine; */
-	}
-
-	section {
-		/* overflow: hidden; */
-		/* height: 100%; */
-
-		/* background-color: rebeccapurple; */
-
-		width: calc(100% - var(--nav-width));
-		width: 100%;
-		height: 100%;
 	}
 
 	.header-title {

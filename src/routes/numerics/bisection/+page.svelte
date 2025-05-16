@@ -15,11 +15,6 @@
 
   const fig1 = getFig1();
 
-  /**
-	 * @type {HTMLElement}
-	 */
-  let test_;
-
 	onMount(() => {
 		Prism.highlightAll();
 
@@ -34,11 +29,12 @@
 			],
 			// • rendering keys, e.g.:
 			throwOnError : true,
+      output: "html"
 		});
 	});
 </script>
 
-<article id="test-article" class="tmp">
+<article id="test-article">
   <section>
     <h2>Bisection Method</h2>
   </section>
@@ -84,11 +80,11 @@
 
   <section>
     <p>
-      구간 $[\;0.5,\; 2.0\;]$ 에서 위로 동일한 과정을 반복합니다.
+      구간 ${String.raw`[\;0.5,\; 2.0\;]`}$ 에서 위로 동일한 과정을 반복합니다.
     </p>
   </section>
 
-  <section>
+  <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
 </article>
@@ -96,7 +92,7 @@
 <style>
   @import 'style.css';
 
-  .tmp {
+  article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,17 +107,9 @@
   } */
 
   section {
-    /* background-color: aliceblue; */
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    width: 100%;
-  }
 
-  .fig {
-    display: flex;
-    justify-content: center;
+    width: 90%;
+    /* margin-top: 10px; */
   }
 
   p {
