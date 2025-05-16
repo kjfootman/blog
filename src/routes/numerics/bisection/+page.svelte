@@ -7,6 +7,7 @@
 	import 'prismjs/components/prism-rust.js';
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css';
+  import './style.css';
 
 	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
 	import 'katex/dist/katex.min.css';
@@ -90,7 +91,6 @@
 </article>
 
 <style>
-  @import 'style.css';
 
   article {
     display: flex;
