@@ -13,13 +13,17 @@
 
 	let { data } = $props();
 
-  let fig1 = getFig1();
-  console.log(fig1);
+  const fig1 = getFig1();
+
+  /**
+	 * @type {HTMLElement}
+	 */
+  let test_;
 
 	onMount(() => {
 		Prism.highlightAll();
 
-		renderMathInElement(document.querySelector('container'), {
+		renderMathInElement(document.querySelector('article'), {
 			// customised options
 			// • auto-render specific keys, e.g.:
 			delimiters: [
@@ -29,51 +33,99 @@
 				{left: '\\[', right: '\\]', display: true}
 			],
 			// • rendering keys, e.g.:
-			throwOnError : true
+			throwOnError : true,
 		});
 	});
 </script>
 
-<container>
-  <h1>Bisection Method</h1>
+<article id="test-article" class="tmp">
+  <section>
+    <h2>Bisection Method</h2>
+  </section>
 
-  <p>
-    구간 <i>$[a, b]$</i> 에 대하여 <i>${'f(a) * f(b) < 0'}$</i> 일 경우 해를 찾아가는 방법입니다.<br>
-    <i>$f(a)$</i> 와 <i>$f(b)$</i> 의 부호가 반대일 경우 구간 <i>$[a, b]$</i> 에서 1개 이상의 해가 존재합니다.<br>
-    <i>$a$</i> 와 <i>$b$</i>의 중간 값 <i>$mid$</i> 에 대해 
-    <i>$f(mid)$</i> 와 <i>$f(a)$</i> 및 <i>$f(b)$</i>
-    의 관계에 따라 반복적으로 a 와 b를 할당 합니다.
-  </p>
+  <section>
+    <p>
+      구간 <i>$[\;a,\;b\;]$</i> 에 대하여 <i>$f(a) \cdot f(b) {'<'} 0$</i> 일 경우,
+      방정식 <i>$f(x) = 0$</i> 의 해를 찾아가는 반복법 입니다.<br>
+      <i>$f(a)$</i> 와 <i>$f(b)$</i> 의 부호가 서로 반대일 경우
+      <i>$[\;a,\;b\;]$</i> 내에서 반드시 1개 이상의 해가 존재합니다.<br>
+    </p>
+    <p>
+      <i>$a$</i> 와 <i>$b$</i>의 중간 값 <i>$mid$</i> 에 대하여,<br>
+      <i>$f(mid)$</i> 와 <i>$f(a)$</i> 의 부호가 서로 반대일 경우 <i>$b$</i> 에 <i>$mid$</i> 를 할당 하고,<br>
+      <i>$f(mid)$</i> 와 <i>$f(b)$</i> 의 부호가 서로 반대일 경우 <i>$a$</i> 에 <i>$mid$</i> 를 할당 합니다.<br>
 
-  <p>$${String.raw`
-    \mathcal{mid} =
-    \begin{cases}
-      a & \text{if $f(mid) * f(a) < 0$} \\
-      b & \text{if $f(mid) * f(b) < 0$} \\
-    \end{cases}
-  `}$$</p>
+      $${String.raw`
+        \begin{equation}
+        \begin{cases}
+          \space b = mid & \text{if}\enspace f(mid) \cdot f(a) < 0 \\
+          \space a = mid & \text{if}\enspace f(mid) \cdot f(b) < 0 \\
+        \end{cases}
+        \end{equation}
+      `}$$
 
-  {@html fig1.outerHTML}
+      위 방법을 반복하면 <i>$mid$</i> 가 해에 수렴해 갑니다.
+    </p>
+  </section>
 
-  <pre><code class="language-rust line-numbers">{data.code}</code></pre>
-</container>
+  <section>
+    <p>
+      아래 예제는 Bisection method 를 사용하여 구간 $[\;0.5,\; 3.5\;]$ 에서 $y = x^2 - 2$ 의 해를 찾는 과정 입니다.<br>
+      $a$ 가 $0.5$ 이고 $b$ 가 $3.5$ 이므로 중간 값 $mid$ 은 $2.0$ 입니다.<br>
+      $(1)$ 을 적용하면 $f(a)$ 와 $f(mid)$ 의 부호가 서로 반대이기 때문에
+      $a$ 와 $b$ 는 각각 $0.5$ 와 $2.0$ 이 됩니다.
+    </p>
 
+  </section>
+
+  <section>
+    {@html fig1.outerHTML}
+  </section>
+
+  <section>
+    <p>
+      구간 $[\;0.5,\; 2.0\;]$ 에서 위로 동일한 과정을 반복합니다.
+    </p>
+  </section>
+
+  <section>
+    <pre><code class="language-rust line-numbers">{data.code}</code></pre>
+  </section>
+</article>
 
 <style>
   @import 'style.css';
 
-  container {
+  .tmp {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    overflow-y: auto;
+  }
+
+  /* article {
+    width: 50%;
+    overflow-y: auto;
+  } */
+
+  section {
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
   }
 
-  p {
-    line-height: 50px;
+  .fig {
+    display: flex;
+    justify-content: center;
   }
 
-  /* section {
-    width: 70%;
-  } */
+  p {
+    line-height: 40px;
+    text-indent: 10px;
+  }
 </style>

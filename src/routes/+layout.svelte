@@ -38,24 +38,36 @@
 	<span class="header-title">Hello Sloth</span>
 </header>
 
+<nav>
+	<Menu menu={profile}></Menu>
+	<Menu menu={math_menu}></Menu>
+	<Menu menu={rust_menu}></Menu>
+</nav>
+
 <main>
-	<nav>
-		<Menu menu={profile}></Menu>
-		<Menu menu={math_menu}></Menu>
-		<Menu menu={rust_menu}></Menu>
-	</nav>
 	<section>
 		{@render children()}
 	</section>
 </main>
 
+
 <style>
-	:global(body) {
+	:global(*, body) {
 		--header-height: 70px;
 		--font-size: 15px;
+		--nav-width: 300px;
 
 		margin: 0;
 		padding: 0;
+	}
+
+	:global(body) {
+		display: grid;
+
+		grid-template-rows: var(--header-height) calc(100% - var(--header-height)) ;
+		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
+		box-sizing: border-box;
+		height: 100vh;
 	}
 
 	header {
@@ -63,32 +75,48 @@
 		height: var(--header-height);
 		display: flex;
 		border-bottom: 1px solid black;
-		box-sizing: border-box;
 		background-color: beige;
+		grid-column: 1 / 3;
+
+		box-sizing: border-box;
 	}
 
 	nav {
 		display: flexbox;
-		width: 100%;
+		width: var(--nav-width);
+		/* height: calc(100vh - var(--header-height)); */
 		border-right: 1px solid black;
 		box-sizing: border-box;
 
-		background-color: antiquewhite;
+		background-color: aliceblue;
+		/* background-color: antiquewhite; */
 	}
 
 	main {
-		--nav-width: 300px;
+
+		/* display: flex; */
 
 		width: 100%;
-		height: calc(100vh - var(--header-height));
+		/* height: calc(100% - var(--header-height)); */
 		box-sizing: border-box;
 
-		display: grid;
-		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
+		overflow-y: hidden;
+
+		/* display: grid;
+		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width)); */
+
+		/* background-color: aquamarine; */
 	}
 
 	section {
-		overflow-y: auto;
+		/* overflow: hidden; */
+		/* height: 100%; */
+
+		/* background-color: rebeccapurple; */
+
+		width: calc(100% - var(--nav-width));
+		width: 100%;
+		height: 100%;
 	}
 
 	.header-title {
@@ -96,6 +124,16 @@
 		line-height: 100%;
 		align-items: center;
 		font-weight: bold;
+	}
+
+
+	.block {
+		width: 100%;
+		height: 100%;
+		background-color: red;
+
+		border: 1px solid black;
+		grid-column: 1 / 3;
 	}
 
 </style>

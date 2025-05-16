@@ -1,3 +1,5 @@
+export const ssr = false;
+
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */

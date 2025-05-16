@@ -1,5 +1,6 @@
 import * as Plot from "@observablehq/plot";
 
+
 export function getFig1() {
   const np = 101;
   const xMin = 0;

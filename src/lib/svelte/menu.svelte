@@ -16,19 +16,9 @@
 
 <style>
 	details {
-		--margin: 10px;
-
-		width: calc(100% - calc(2 * (var(--margin))));
-		margin: 10px;
-		margin-top: 20px;
-		box-sizing: border-box;
+		width: 100%;
 		font-weight: bold;
-	}
 
-	/* details > a {
-        display: flex;
-        width: 100%;
-        text-decoration: none;
-        font-weight: normal;
-    } */
+		box-sizing: border-box;
+	}
 </style>

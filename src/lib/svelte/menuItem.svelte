@@ -6,14 +6,15 @@
 
 <style>
 	div {
-		--margin: 5px;
+		--margin: 10px;
 
-		width: calc(100% - calc(2 * var(--margin)));
+		width: calc(100% - 2 * var(--margin));
 		margin: var(--margin);
 		height: 40px;
-		box-sizing: border-box;
 		border: 2px solid black;
 		border-radius: 10px;
+
+		box-sizing: border-box;
 	}
 
 	div > a {
@@ -26,6 +27,8 @@
 		font-weight: normal;
 		font-size: 15px;
 		color: black;
+
+		box-sizing: border-box;
 	}
 
 	div > a:hover {
