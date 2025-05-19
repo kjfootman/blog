@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-  import { getFig1 } from './data.js';
+  import { getFig } from './data.js';
 
 	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
@@ -14,7 +14,8 @@
 
 	let { data } = $props();
 
-  const fig1 = getFig1();
+  const fig1 = getFig(0.5, 3.5, 101, "fig1");
+  const fig2 = getFig(0.5, 2.0, 101, "fig2");
 
 	onMount(() => {
 		Prism.highlightAll();
@@ -31,13 +32,14 @@
 			// • rendering keys, e.g.:
 			throwOnError : true,
       output: "html"
+      // output: "mathml"
 		});
 	});
 </script>
 
 <article id="test-article">
   <section>
-    <h2>Bisection Method</h2>
+    <h2 class="title">Bisection Method</h2>
   </section>
 
   <section>
@@ -75,13 +77,24 @@
 
   </section>
 
-  <section>
+  <section class="fig-center">
     {@html fig1.outerHTML}
   </section>
 
   <section>
     <p>
-      구간 ${String.raw`[\;0.5,\; 2.0\;]`}$ 에서 위로 동일한 과정을 반복합니다.
+      구간 $[\;0.5,\; 2.0\;]$ 에서 위로 동일한 과정을 반복합니다. $a = 0.5$, $b = 2.0$, $mid=1.25$<br>
+      $(1)$ 을 적용하면 $a$ 는 $1.25$ 가 되고, $b$ 는 $2.0$ 가 되어 구간 $[\;1.25,\;2.0\;]$ 에서 위 과정을 반복 합니다.
+    </p>
+  </section>
+
+  <section class="fig-center">
+    {@html fig2.outerHTML}
+  </section>
+
+  <section>
+    <p>
+      위 과정을 계속 반복하면 아래 표와 같이 $mid$ 가 $\sqrt{2}$ 에 근접해 가는 것을 확인 할 수 있습니다.
     </p>
   </section>
 
@@ -91,29 +104,6 @@
 </article>
 
 <style>
-
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-
-    overflow-y: auto;
-  }
-
-  /* article {
-    width: 50%;
-    overflow-y: auto;
-  } */
-
-  section {
-
-    width: 90%;
-    /* margin-top: 10px; */
-  }
-
-  p {
-    line-height: 40px;
-    text-indent: 10px;
-  }
+  @import 'style.css';
+  @import '$lib/css/article-style.css';
 </style>
