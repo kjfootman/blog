@@ -13,8 +13,6 @@
 		height: 40px;
 		border: 2px solid black;
 		border-radius: 10px;
-
-		box-sizing: border-box;
 	}
 
 	div > a {
@@ -27,16 +25,10 @@
 		font-weight: normal;
 		font-size: 15px;
 		color: black;
-
-		box-sizing: border-box;
 	}
 
 	div > a:hover {
 		color: red;
 		font-weight: bold;
 	}
-
-	/* div > a:visited {
-        color: black;
-    } */
 </style>

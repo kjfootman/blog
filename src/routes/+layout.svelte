@@ -1,6 +1,7 @@
 <script>
 	import Menu from '$lib/svelte/menu.svelte';
 
+	let menuOpen = $state(true);
 	let { children } = $props();
 
 	const profile = {
@@ -34,28 +35,39 @@
 	<title>Sloth</title>
 </svelte:head>
 
+<svelte:window on:resize={(e) => {
+	if (window.innerWidth < 800) {
+		menuOpen = false;
+	} else {
+		menuOpen = true;
+	}
+
+}}></svelte:window>
+
 <header>
 	<span class="header-title">Hello Sloth</span>
 </header>
 
 <nav>
-	<Menu menu={profile}></Menu>
-	<Menu menu={math_menu}></Menu>
-	<Menu menu={rust_menu}></Menu>
+	<Menu menu={profile} isOpen={menuOpen}></Menu>
+	<Menu menu={math_menu} isOpen={menuOpen}></Menu>
+	<Menu menu={rust_menu} isOpen={menuOpen}></Menu>
 </nav>
 
 <main>
-	<section>
+	<div style="width: 100%;">
 		{@render children()}
-	</section>
+	</div>
 </main>
 
 
 <style>
 	:global(*, body) {
 		--header-height: 70px;
-		--font-size: 15px;
 		--nav-width: 300px;
+
+		font-size: 16px;
+		box-sizing: border-box;
 
 		margin: 0;
 		padding: 0;
@@ -66,9 +78,9 @@
 
 		grid-template-rows: var(--header-height) calc(100% - var(--header-height)) ;
 		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));
-		box-sizing: border-box;
 		height: 100vh;
 	}
+
 
 	header {
 		width: 100%;
@@ -78,45 +90,25 @@
 		background-color: beige;
 		grid-column: 1 / 3;
 
-		box-sizing: border-box;
 	}
 
 	nav {
 		display: flexbox;
 		width: var(--nav-width);
-		/* height: calc(100vh - var(--header-height)); */
 		border-right: 1px solid black;
-		box-sizing: border-box;
-
-		background-color: aliceblue;
-		/* background-color: antiquewhite; */
+		border-bottom: 1px solid black;
 	}
 
 	main {
-
-		/* display: flex; */
-
 		width: 100%;
-		/* height: calc(100% - var(--header-height)); */
-		box-sizing: border-box;
-
-		overflow-y: hidden;
-
-		/* display: grid;
-		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width)); */
-
-		/* background-color: aquamarine; */
+		overflow-y: auto;
 	}
 
 	section {
-		/* overflow: hidden; */
-		/* height: 100%; */
-
-		/* background-color: rebeccapurple; */
-
-		width: calc(100% - var(--nav-width));
+		/* width: calc(100% - var(--nav-width)); */
 		width: 100%;
 		height: 100%;
+		overflow-y: auto;
 	}
 
 	.header-title {
@@ -126,14 +118,14 @@
 		font-weight: bold;
 	}
 
+	@media (max-width: 800px) {
+		:global(body) {
+			display: block;
+			width: 100%;
+		}
 
-	.block {
-		width: 100%;
-		height: 100%;
-		background-color: red;
-
-		border: 1px solid black;
-		grid-column: 1 / 3;
+		nav {
+			width: 100%;
+		}
 	}
-
 </style>
