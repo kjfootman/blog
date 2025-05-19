@@ -9,9 +9,18 @@ export async function load({ fetch }) {
 
 	const text = await res.text();
 
+
+	const csv_url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/output/bisection.csv'
+	const test = await fetch(csv_url);
+
+	if (!test.ok) error(404, { message: 'Not found' });
+
+	const tmp = await test.text();
+
 	return {
 		code: text,
 		// html: html
-		text: ''
+		text: '',
+		csv: tmp
 	};
 }

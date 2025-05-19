@@ -1,7 +1,7 @@
 <script>
 	import Menu from '$lib/svelte/menu.svelte';
 
-	let menuOpen = $state(true);
+	let menuOpen = $state(window.innerWidth > 0 ? true : false);
 	let { children } = $props();
 
 	const profile = {
@@ -104,12 +104,11 @@
 		overflow-y: auto;
 	}
 
-	section {
-		/* width: calc(100% - var(--nav-width)); */
+	/* section {
 		width: 100%;
 		height: 100%;
 		overflow-y: auto;
-	}
+	} */
 
 	.header-title {
 		display: flex;

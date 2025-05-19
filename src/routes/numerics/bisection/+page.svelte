@@ -14,6 +14,10 @@
 
 	let { data } = $props();
 
+  data.csv.split('\n').values().forEach(v => {
+    console.log(v);
+  })
+
   const fig1 = getFig(0.5, 3.5, 101, "fig1");
   const fig2 = getFig(0.5, 2.0, 101, "fig2");
 
@@ -74,7 +78,6 @@
       $(1)$ 을 적용하면 $f(a)$ 와 $f(mid)$ 의 부호가 서로 반대이기 때문에
       $a$ 와 $b$ 는 각각 $0.5$ 와 $2.0$ 이 됩니다.
     </p>
-
   </section>
 
   <section class="fig-center">
@@ -101,6 +104,8 @@
   <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
+
+  <!-- <p>{data.csv.split("\n")}</p> -->
 </article>
 
 <style>
