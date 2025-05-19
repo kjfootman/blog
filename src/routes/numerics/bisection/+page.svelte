@@ -36,7 +36,7 @@
 	});
 </script>
 
-<article id="test-article" class="tmp">
+<article id="test-article">
   <section>
     <h2 class="title">Bisection Method</h2>
   </section>
@@ -97,7 +97,7 @@
     </p>
   </section>
 
-  <section>
+  <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
 </article>
