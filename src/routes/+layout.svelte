@@ -1,7 +1,8 @@
 <script>
 	import Menu from '$lib/svelte/menu.svelte';
 
-	let menuOpen = $state(window.innerWidth > 0 ? true : false);
+	let menuOpen = $state(true);
+	let test = $state();
 	let { children } = $props();
 
 	const profile = {
@@ -35,13 +36,12 @@
 	<title>Sloth</title>
 </svelte:head>
 
-<svelte:window on:resize={(e) => {
+<svelte:window onresize={(e) => {
 	if (window.innerWidth < 800) {
 		menuOpen = false;
 	} else {
 		menuOpen = true;
 	}
-
 }}></svelte:window>
 
 <header>

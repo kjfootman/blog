@@ -2,25 +2,31 @@ import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	const code_url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/dev/examples/bisection.rs';
-	const res = await fetch(code_url);
+	let url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/dev/examples/bisection.rs';
+	let res = await fetch(url);
 
 	if (!res.ok) error(404, { message: 'Not found' });
 
-	const text = await res.text();
+	const code = await res.text();
 
+	url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/output/bisection.csv'
+	res = await fetch(url);
 
-	const csv_url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/output/bisection.csv'
-	const test = await fetch(csv_url);
+	if (!res.ok) error(404, { message: 'Not found' });
 
-	if (!test.ok) error(404, { message: 'Not found' });
+	const csv = await res.text();
+	const rows = csv.split('\n');
+	rows.pop();
 
-	const tmp = await test.text();
+	const header = rows.shift()?.split(',');
+
+	const body = rows.map(e => e.split(',').map((e, i) => i > 0 ? Number(e).toFixed(4): e));
 
 	return {
-		code: text,
-		// html: html
-		text: '',
-		csv: tmp
+		code: code,
+		csv: {
+			header: header,
+			body: body
+		}
 	};
 }

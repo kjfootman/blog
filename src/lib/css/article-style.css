@@ -28,9 +28,9 @@ p {
   font-size: 2rem;
 }
 
-.katex {
-  font-size: 2rem;
-  background-color: yellow;
+table {
+  border: 1px solid black;
+  margin: auto;
 }
 
 @media (max-width: 800px) {

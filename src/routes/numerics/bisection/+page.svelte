@@ -14,9 +14,9 @@
 
 	let { data } = $props();
 
-  data.csv.split('\n').values().forEach(v => {
-    console.log(v);
-  })
+  // data.csv.split('\n').values().forEach(v => {
+  //   console.log(v);
+  // })
 
   const fig1 = getFig(0.5, 3.5, 101, "fig1");
   const fig2 = getFig(0.5, 2.0, 101, "fig2");
@@ -101,11 +101,30 @@
     </p>
   </section>
 
+  <section>
+    <table style="width: 600px; text-align: center;">
+      <thead>
+        <tr>
+          {#each data.csv.header as column}
+            <th>{column}</th>
+          {/each}
+        </tr>
+      </thead>
+      <tbody>
+      {#each data.csv.body as row}
+        <tr>
+          {#each row as column}
+            <td>{column}</td>
+          {/each}
+        </tr>
+      {/each}
+      </tbody>
+    </table>
+  </section>
+
   <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
-
-  <!-- <p>{data.csv.split("\n")}</p> -->
 </article>
 
 <style>
