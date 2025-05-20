@@ -4,18 +4,13 @@
 	let { menu, isOpen } = $props();
 	const menuItmes = menu['menuItems'];
 
-	// /** @param { boolean } bool */
-	// export function openMenu(bool) {
-	// 	isOpen = bool;
+	// function menu_open() {
+	// 	if (window.innerWidth < 800) {
+	// 		isOpen = false;
+	// 	} else {
+	// 		isOpen = true;
+	// 	}
 	// }
-
-	function menu_open() {
-		if (window.innerWidth < 800) {
-			isOpen = false;
-		} else {
-			isOpen = true;
-		}
-	}
 </script>
 
 <details bind:open={isOpen}>

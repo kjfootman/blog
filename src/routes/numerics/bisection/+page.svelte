@@ -14,9 +14,7 @@
 
 	let { data } = $props();
 
-  // data.csv.split('\n').values().forEach(v => {
-  //   console.log(v);
-  // })
+  console.log(data.csv);
 
   const fig1 = getFig(0.5, 3.5, 101, "fig1");
   const fig2 = getFig(0.5, 2.0, 101, "fig2");
