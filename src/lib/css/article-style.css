@@ -10,7 +10,7 @@ section {
   margin: auto;
   width: 60%;
   max-width: 1000px;
-  background-color: beige;
+  /* background-color: beige; */
 }
 
 p {
@@ -22,10 +22,6 @@ p {
 .fig-center {
   display: flex;
   justify-content: center;
-}
-
-.title {
-  font-size: 2rem;
 }
 
 table {

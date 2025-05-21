@@ -13,8 +13,6 @@
 
 	let { data } = $props();
 
-  console.log(data.csv);
-
   const fig1 = getFig(0.5, 3.5, 101);
   const fig2 = getFig(0.5, 2.0, 101);
 
@@ -40,7 +38,7 @@
 
 <article>
   <section>
-    <h2 class="title">Bisection Method</h2>
+    <h2>Bisection Method</h2>
   </section>
 
   <section>
@@ -69,9 +67,9 @@
   </section>
 
   <section>
-    <h2 class="title">예제</h2>
+    <h2>예제</h2>
     <p>
-      아래 예제는 Bisection method 를 사용하여 구간 $[\;0.5,\; 3.5\;]$ 에서 $y = x^2 - 2$ 의 해를 찾는 과정 입니다.<br>
+      아래 예제는 Bisection Method 를 사용하여 구간 $[\;0.5,\; 3.5\;]$ 에서 $y = x^2 - 2$ 의 해를 찾는 과정 입니다.<br>
       $a$ 가 $0.5$ 이고 $b$ 가 $3.5$ 이므로 중간 값 $mid$ 은 $2.0$ 입니다.
     </p>
 
@@ -134,6 +132,4 @@
   <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
-
-  <button>test</button>
 </article>

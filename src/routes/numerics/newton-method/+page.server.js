@@ -1,15 +1,17 @@
+export const ssr = false;
+
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	let url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/src/numerics/bisection_method.rs';
+	let url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/src/numerics/newton_method.rs';
 	let res = await fetch(url);
 
 	if (!res.ok) error(404, { message: 'Not found' });
 
 	const code = await res.text();
 
-	url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/output/bisection.csv'
+	url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/output/newton.csv'
 	res = await fetch(url);
 
 	if (!res.ok) error(404, { message: 'Not found' });

@@ -1,4 +1,3 @@
-<!-- <a href="/main">main</a> -->
 <container>
 	<section>
 		<h1>안녕하세요.</h1>
@@ -38,7 +37,6 @@
 		<big>기타: Git</big>
 	</section>
 
-	<button>test</button>
 	<div style="height: 100px;"></div>
 </container>
 

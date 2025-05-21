@@ -55,9 +55,7 @@
 </nav>
 
 <main>
-	<div style="width: 100%;">
-		{@render children()}
-	</div>
+	{@render children()}
 </main>
 
 
