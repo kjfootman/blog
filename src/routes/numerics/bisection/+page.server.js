@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	let url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/dev/examples/bisection.rs';
+	let url = 'https://raw.githubusercontent.com/kjfootman/blog_codes/main/examples/numerics_bisection.rs';
 	let res = await fetch(url);
 
 	if (!res.ok) error(404, { message: 'Not found' });
@@ -19,10 +19,6 @@ export async function load({ fetch }) {
 	rows.pop();
 
 	const header = rows.shift()?.split(',') || new Array;
-<<<<<<< HEAD
-=======
-
->>>>>>> 4a83cf5f9bacb4d68326279babfc9ed8841f9b70
 	const body = rows.map(e => e.split(',').map((e, i) => i > 0 ? Number(e).toFixed(4): e));
 
 	// console.log(header);
