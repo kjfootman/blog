@@ -4,9 +4,8 @@ import * as Plot from "@observablehq/plot";
  * @param {number} xMin "xMin value"
  * @param {number} xMax "xMax value"
  * @param {number} nPoint "number of points"
- * @param {string} name "class name"
  */
-export function getFig(xMin, xMax, nPoint, name) {
+export function getFig(xMin, xMax, nPoint) {
   const np = nPoint;
   const anno_dy = 20;
 
@@ -19,7 +18,6 @@ export function getFig(xMin, xMax, nPoint, name) {
 
   let plot = Plot.plot({
     grid: true,
-    className: name,
     x: {
       label: "x",
       domain: [0, 3.7],
@@ -28,6 +26,7 @@ export function getFig(xMin, xMax, nPoint, name) {
     y: {
       domain: [-3.5, 14],
     },
+    width: 600,
     clip: "frame",
     marks: [
       Plot.line(data, {x: "x", y: "y"}),
@@ -38,12 +37,12 @@ export function getFig(xMin, xMax, nPoint, name) {
       Plot.dot([xMin, mid, xMax], {x: d => d, y: d => func(d), fill: "red"}),
 
       Plot.areaY(data, {x: d => d.x >= 0.5 && d.x <= 3.5 ? d.x : NaN , y: "y", opacity: 0.1,}),
-      Plot.axisX({label: "x", y: 0, className: "x-axis"}),
-      Plot.axisY({label: "Y", x: 0, className: "y-axis", ticks: 8}),
+      Plot.axisX({label: "x", y: 0, fontSize: 12}),
+      Plot.axisY({label: "Y", x: 0, fontSize: 12, ticks: 8}),
 
-      Plot.text(["a"], {x: xMin, y: func(xMin), dy: anno_dy, className: "annotation"}),
-      Plot.text(["b"], {x: xMax, y: func(xMax), dy: -anno_dy, className: "annotation"}),
-      Plot.text(["mid"], {x: mid, y: func(mid), dy: -anno_dy, className: "annotation"}),
+      Plot.text(["a"], {x: xMin, y: func(xMin), dy: anno_dy, fontSize: 15}),
+      Plot.text(["b"], {x: xMax, y: func(xMax), dy: -anno_dy, fontSize: 15}),
+      Plot.text(["mid"], {x: mid, y: func(mid), dy: -anno_dy, fontSize: 15}),
 
       Plot.frame()
     ]

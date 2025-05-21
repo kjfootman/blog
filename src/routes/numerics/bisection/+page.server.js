@@ -19,6 +19,10 @@ export async function load({ fetch }) {
 	rows.pop();
 
 	const header = rows.shift()?.split(',') || new Array;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4a83cf5f9bacb4d68326279babfc9ed8841f9b70
 	const body = rows.map(e => e.split(',').map((e, i) => i > 0 ? Number(e).toFixed(4): e));
 
 	// console.log(header);
