@@ -18,7 +18,7 @@ export async function load({ fetch }) {
 	const rows = csv.split('\n');
 	rows.pop();
 
-	const header = rows.shift()?.split(',');
+	const header = rows.shift()?.split(',') || new Array;
 
 	const body = rows.map(e => e.split(',').map((e, i) => i > 0 ? Number(e).toFixed(4): e));
 

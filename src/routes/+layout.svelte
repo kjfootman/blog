@@ -62,11 +62,12 @@
 
 
 <style>
+	@import '$lib/css/article-style.css';
+
 	:global(*, body) {
 		--header-height: 70px;
 		--nav-width: 300px;
 
-		font-size: 16px;
 		box-sizing: border-box;
 
 		margin: 0;
@@ -75,6 +76,7 @@
 
 	:global(body) {
 		display: grid;
+		font-size: 16px;
 
 		grid-template-rows: var(--header-height) calc(100% - var(--header-height)) ;
 		grid-template-columns: var(--nav-width) calc(100% - var(--nav-width));

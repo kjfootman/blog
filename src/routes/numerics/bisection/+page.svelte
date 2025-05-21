@@ -7,7 +7,6 @@
 	import 'prismjs/components/prism-rust.js';
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.js';
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.min.css';
-  import './style.css';
 
 	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
 	import 'katex/dist/katex.min.css';
@@ -18,8 +17,8 @@
   //   console.log(v);
   // })
 
-  const fig1 = getFig(0.5, 3.5, 101, "fig1");
-  const fig2 = getFig(0.5, 2.0, 101, "fig2");
+  const fig1 = getFig(0.5, 3.5, 101);
+  const fig2 = getFig(0.5, 2.0, 101);
 
 	onMount(() => {
 		Prism.highlightAll();
@@ -41,7 +40,7 @@
 	});
 </script>
 
-<article id="test-article">
+<article>
   <section>
     <h2 class="title">Bisection Method</h2>
   </section>
@@ -72,32 +71,44 @@
   </section>
 
   <section>
+    <h2 class="title">예제</h2>
     <p>
       아래 예제는 Bisection method 를 사용하여 구간 $[\;0.5,\; 3.5\;]$ 에서 $y = x^2 - 2$ 의 해를 찾는 과정 입니다.<br>
-      $a$ 가 $0.5$ 이고 $b$ 가 $3.5$ 이므로 중간 값 $mid$ 은 $2.0$ 입니다.<br>
+      $a$ 가 $0.5$ 이고 $b$ 가 $3.5$ 이므로 중간 값 $mid$ 은 $2.0$ 입니다.
+    </p>
+
+    <div class="fig-center">
+      {@html fig1.outerHTML}
+    </div>
+
+    <p>
       $(1)$ 을 적용하면 $f(a)$ 와 $f(mid)$ 의 부호가 서로 반대이기 때문에
       $a$ 와 $b$ 는 각각 $0.5$ 와 $2.0$ 이 됩니다.
     </p>
+
   </section>
 
-  <section class="fig-center">
+  <!-- <section class="fig-center">
     {@html fig1.outerHTML}
-  </section>
+  </section> -->
 
   <section>
     <p>
-      구간 $[\;0.5,\; 2.0\;]$ 에서 위로 동일한 과정을 반복합니다. $a = 0.5$, $b = 2.0$, $mid=1.25$<br>
-      $(1)$ 을 적용하면 $a$ 는 $1.25$ 가 되고, $b$ 는 $2.0$ 가 되어 구간 $[\;1.25,\;2.0\;]$ 에서 위 과정을 반복 합니다.
+      $[\;0.5,\; 2.0\;]$ 를 새로운 구간으로 하여 위와 동일한 과정을 반복합니다.
     </p>
-  </section>
 
-  <section class="fig-center">
-    {@html fig2.outerHTML}
+    <div class="fig-center">
+      {@html fig2.outerHTML}
+    </div>
+
+    <!-- <p>
+      $(1)$ 을 적용하면 $a$ 는 $1.25$ 가 되고, $b$ 는 $2.0$ 가 되어 구간 $[\;1.25,\;2.0\;]$ 에서 위 과정을 반복 합니다.
+    </p> -->
   </section>
 
   <section>
     <p>
-      위 과정을 계속 반복하면 아래 표와 같이 $mid$ 가 $\sqrt{2}$ 에 근접해 가는 것을 확인 할 수 있습니다.
+      반복을 진행하면 아래 표와 같이 $mid$ 가 $\sqrt{2}$ 에 근사해 가는 것을 확인 할 수 있습니다.
     </p>
   </section>
 
@@ -125,9 +136,6 @@
   <section style="width: 100%;">
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
-</article>
 
-<style>
-  @import 'style.css';
-  @import '$lib/css/article-style.css';
-</style>
+  <button>test</button>
+</article>
