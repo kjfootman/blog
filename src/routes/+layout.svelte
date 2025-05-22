@@ -2,7 +2,6 @@
 	import Menu from '$lib/svelte/menu.svelte';
 
 	let menuOpen = $state(true);
-	let test = $state();
 	let { children } = $props();
 
 	const profile = {
@@ -16,8 +15,9 @@
 	const math_menu = {
 		title: '수치해석',
 		menuItems: {
-			'bisection method': '/numerics/bisection',
-			newton: '/numerics/newton-method',
+			'Bisection Method': '/numerics/bisection',
+			'Newton Method': '/numerics/newton-method',
+			'Backward Euler Method': '/numerics/backward-euler',
 			CG: '/',
 			GMRES: '/numerics/gmres'
 		}

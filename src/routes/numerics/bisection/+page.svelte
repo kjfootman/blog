@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-  import { getFig } from './data.js';
+  import { getFig } from './figure.js';
 
 	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
@@ -79,30 +79,21 @@
 
     <p>
       $(1)$ 을 적용하면 $f(a)$ 와 $f(mid)$ 의 부호가 서로 반대이기 때문에
-      $a$ 와 $b$ 는 각각 $0.5$ 와 $2.0$ 이 됩니다.
-    </p>
-
-  </section>
-
-  <!-- <section class="fig-center">
-    {@html fig1.outerHTML}
-  </section> -->
-
-  <section>
-    <p>
-      $[\;0.5,\; 2.0\;]$ 를 새로운 구간으로 하여 위와 동일한 과정을 반복합니다.
+      $a$ 는 기존 값 $0.5$ 를 유지하고, $b$ 에는 $mid$ 값 $2.0$ 을 할당 합니다.
+      따라서 $a$ 와 $b$ 는 각각 $0.5$ 와 $2.0$ 이 됩니다.
     </p>
 
     <div class="fig-center">
       {@html fig2.outerHTML}
     </div>
 
-    <!-- <p>
-      $(1)$ 을 적용하면 $a$ 는 $1.25$ 가 되고, $b$ 는 $2.0$ 가 되어 구간 $[\;1.25,\;2.0\;]$ 에서 위 과정을 반복 합니다.
-    </p> -->
   </section>
 
   <section>
+    <p>
+      $[\;0.5,\; 2.0\;]$ 를 새로운 구간으로 하여 위와 동일한 과정을 반복합니다.
+    </p>
+
     <p>
       반복을 진행하면 아래 표와 같이 $mid$ 가 $\sqrt{2}$ 에 근사해 가는 것을 확인 할 수 있습니다.
     </p>

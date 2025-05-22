@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { getFig } from './figure.js';
 
 	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
@@ -11,6 +12,8 @@
 	import 'katex/dist/katex.min.css';
 
 	let { data } = $props();
+
+  const fig1 = getFig();
 
   onMount(() => {
 		Prism.highlightAll();
@@ -39,7 +42,7 @@
 
   <section>
     <p>
-      함수 $y = f(x)$ 의 도함수를 구할 수 있는 경우 기울기를 활용하여 해를 찾아가는 방법입니다.<br>
+      $y = f(x)$ 의 도함수를 구할 수 있는 경우 기울기를 활용하여 $f(x) = 0$ 의 해를 찾아가는 방법입니다.<br>
       초기 값 $x_0$ 에서 $f(x)$ 에 접하는 직선의 방정식은 $(1)$ 과 같습니다.
       $${String.raw`
         \begin{equation}
@@ -59,6 +62,10 @@
     <p>
       아래 예제는 Newton's Method 를 사용하여 $y = x^2 - 2$ 의 해를 찾는 과정입니다.
     </p>
+
+    <div class="fig-center">
+      {@html fig1.outerHTML}
+    </div>
   </section>
 
   <section>
