@@ -33,6 +33,14 @@ table, th, td {
   margin: auto;
 }
 
+.title {
+  margin: 1rem auto;
+}
+
+.subtitle {
+  margin: 1rem auto;
+}
+
 @media (max-width: 800px) {
   section {
     width: 100%;
