@@ -17,6 +17,7 @@
 	<summary>
 		{menu['title']}
 	</summary>
+
 	{#each Object.entries(menuItmes) as [title, link]}
 		<MenuItem {title} {link}></MenuItem>
 	{/each}
@@ -26,5 +27,7 @@
 	details {
 		width: 100%;
 		font-weight: bold;
+		/* margin-top: 30px; */
+		margin: 15px auto;
 	}
 </style>

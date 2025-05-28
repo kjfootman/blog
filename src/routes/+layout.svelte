@@ -7,17 +7,17 @@
 	const profile = {
 		title: 'My Profile',
 		menuItems: {
-			pfofile: '/',
-			projects: '/'
+			pfofile: '/profile',
 		}
 	};
 
 	const math_menu = {
 		title: '수치해석',
 		menuItems: {
-			'Bisection Method': '/numerics/bisection',
-			'Newton Method': '/numerics/newton-method',
-			'Backward Euler Method': '/numerics/backward-euler',
+			"Bisection Method": '/numerics/bisection',
+			"Newton's Method": '/numerics/newton-method',
+			"Backward Euler Method": '/numerics/backward-euler',
+			"Secant Method": '/numerics/secant-method',
 			CG: '/',
 			GMRES: '/numerics/gmres'
 		}

@@ -26,11 +26,24 @@ p {
 
 table {
   border-collapse: collapse;
+  text-align: center;
+  width: 100%;
 }
 
 table, th, td {
   border: 1px solid black;
-  margin: auto;
+  margin: 2.5rem auto;
+  font-size: 1rem;
+}
+
+th {
+  line-height: 1.8rem;
+  background-color: cyan;
+  border-bottom: medium double black;
+}
+
+td {
+  line-height: 1.7rem;
 }
 
 .title {
@@ -54,5 +67,14 @@ table, th, td {
   p {
     font-size: 0.8rem;
     line-height: 1.2rem;
+  }
+
+  table {
+    margin: 1rem auto;
+  }
+
+  td, th {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
   }
 }

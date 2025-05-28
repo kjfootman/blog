@@ -6,13 +6,15 @@
 
 <style>
 	div {
-		--margin: 10px;
+		--margin: 0.5rem;
 
 		width: calc(100% - 2 * var(--margin));
-		margin: var(--margin);
-		height: 40px;
-		border: 2px solid black;
-		border-radius: 10px;
+		margin-top: var(--margin);
+		margin-left: 0.5rem;
+		/* margin: var(--margin); */
+		/* height: 40px; */
+		/* border: 2px solid black; */
+		/* border-radius: 10px; */
 	}
 
 	div > a {

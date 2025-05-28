@@ -59,7 +59,7 @@
       $x$ 를 구한 후 이를 초기 값 $x_0$ 로 하여 $(2)$ 에 대입하는 과정을 반복하면 $x$ 가 $f(x) = 0$ 의 해에 근사해 갑니다.
     </p>
 
-    <h3 class="subtitle">예제</h3>
+    <h3 class="subtitle">Example</h3>
     <p>
       아래 예제는 Newton's Method 를 사용하여 $y = x^2 - 2$ 의 해를 찾는 과정입니다.<br>
       초기 값 $x_0 = 3.5$ 로 하여 $(2)$ 에 대입하면 $Fig.1$ 과 같이 $x \approx 2.0357$ 를 얻을 수 있습니다.<br>
@@ -70,7 +70,7 @@
     </div>
 
     <p>
-      $x$ 를 $x_0$ 에 할당하고 $(2)$ 에 대입하면 $Fig.2$ 와 같이 $x \approx 1.5091$ 를 얻을 수 있습니다.<br>
+      다음 반복에서 $x$ 를 $x_0$ 에 할당하고 $(2)$ 에 대입하면 $Fig.2$ 와 같이 $x \approx 1.5091$ 를 얻을 수 있습니다.<br>
     </p>
 
     <div class="fig-center">
@@ -81,7 +81,7 @@
   </section>
 
   <section>
-    <table style="width: 600px; text-align: center;">
+    <table>
       <thead>
         <tr>
           {#each data.csv.header as column}

@@ -67,7 +67,7 @@
   </section>
 
   <section>
-    <h3 class="subtitle">예제</h3>
+    <h2 class="subtitle">Example</h2>
     <p>
       아래 예제는 Bisection Method 를 사용하여 구간 $[\;0.5,\; 3.5\;]$ 에서 $y = x^2 - 2$ 의 해를 찾는 과정 입니다.<br>
       $a$ 가 $0.5$ 이고 $b$ 가 $3.5$ 이므로 중간 값 $mid$ 은 $2.0$ 입니다.
@@ -100,7 +100,7 @@
   </section>
 
   <section>
-    <table style="width: 600px; text-align: center;">
+    <table>
       <thead>
         <tr>
           {#each data.csv.header as column}
