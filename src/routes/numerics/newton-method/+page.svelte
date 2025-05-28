@@ -14,7 +14,7 @@
 	let { data } = $props();
 
   const fig1 = getFig(3.5, 2.0357);
-  const fig2 = getFig(2.0357, 1.5091);
+  const fig2 = getFig(2.0357, 1.5091, "Fig.2 iteration 1");
 
   onMount(() => {
 		Prism.highlightAll();
@@ -62,7 +62,8 @@
     <h3 class="subtitle">Example</h3>
     <p>
       아래 예제는 Newton's Method 를 사용하여 $y = x^2 - 2$ 의 해를 찾는 과정입니다.<br>
-      초기 값 $x_0 = 3.5$ 로 하여 $(2)$ 에 대입하면 $Fig.1$ 과 같이 $x \approx 2.0357$ 를 얻을 수 있습니다.<br>
+      초기 값 $x_0 = 3.5$ 로 부터 시작해서 $(2)$ 를 반복하여 해를 찾아가 보겠습니다.<br>
+      $(2)$ 의 $x_0$ 에 초기 값 $3.5$ 를 대입하면 $Fig.1$ 과 같이 $x \approx 2.0357$ 를 얻을 수 있습니다.<br>
     </p>
 
     <div class="fig-center">
@@ -70,7 +71,7 @@
     </div>
 
     <p>
-      다음 반복에서 $x$ 를 $x_0$ 에 할당하고 $(2)$ 에 대입하면 $Fig.2$ 와 같이 $x \approx 1.5091$ 를 얻을 수 있습니다.<br>
+      다음 반복을 위해 $x_0$ 에 위에서 구한 $x \approx 2.0375$ 를 할당하고 $(2)$ 에 대입하면 $Fig.2$ 와 같이 $x \approx 1.5091$ 를 얻을 수 있습니다.<br>
     </p>
 
     <div class="fig-center">
@@ -101,7 +102,8 @@
     </table>
   </section>
 
-  <section style="width: 100%;">
+  <section class="code-block">
+    <h2 class="subtitle">Source Code</h2>
     <pre><code class="language-rust line-numbers">{data.code}</code></pre>
   </section>
 </article>

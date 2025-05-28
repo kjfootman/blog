@@ -37,8 +37,8 @@ export function getFig(xMin, xMax, nPoint) {
       Plot.dot([xMin, mid, xMax], {x: d => d, y: d => func(d), fill: "red"}),
 
       Plot.areaY(data, {x: d => d.x >= 0.5 && d.x <= 3.5 ? d.x : NaN , y: "y", opacity: 0.1,}),
-      Plot.axisX({label: "x", y: 0, fontSize: 12}),
-      Plot.axisY({label: "Y", x: 0, fontSize: 12, ticks: 8}),
+      Plot.axisX({label: "X", y: 0, fontSize: 12, labelAnchor:"center", labelArrow: "none"}),
+      Plot.axisY({label: "Y", x: 0, fontSize: 12, labelAnchor:"center", labelArrow: "none", ticks: 8}),
 
       Plot.text(["a"], {x: xMin, y: func(xMin), dy: anno_dy, fontSize: 15}),
       Plot.text(["b"], {x: xMax, y: func(xMax), dy: -anno_dy, fontSize: 15}),

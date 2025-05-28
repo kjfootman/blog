@@ -3,14 +3,6 @@
 
 	let { menu, isOpen } = $props();
 	const menuItmes = menu['menuItems'];
-
-	// function menu_open() {
-	// 	if (window.innerWidth < 800) {
-	// 		isOpen = false;
-	// 	} else {
-	// 		isOpen = true;
-	// 	}
-	// }
 </script>
 
 <details bind:open={isOpen}>
@@ -27,7 +19,6 @@
 	details {
 		width: 100%;
 		font-weight: bold;
-		/* margin-top: 30px; */
 		margin: 15px auto;
 	}
 </style>

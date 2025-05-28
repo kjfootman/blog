@@ -16,8 +16,8 @@
 		menuItems: {
 			"Bisection Method": '/numerics/bisection',
 			"Newton's Method": '/numerics/newton-method',
-			"Backward Euler Method": '/numerics/backward-euler',
 			"Secant Method": '/numerics/secant-method',
+			"Backward Euler Method": '/numerics/backward-euler',
 			CG: '/',
 			GMRES: '/numerics/gmres'
 		}

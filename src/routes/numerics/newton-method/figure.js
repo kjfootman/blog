@@ -3,11 +3,9 @@ import * as Plot from "@observablehq/plot";
 /** 
  * @param {number} x0 
  * @param {number} x1 
+ * @param {string | null} caption
  */
-export function getFig(x0, x1) {
-  // const x0 = 3.5;
-  // const x1 = 2.0357;
-
+export function getFig(x0, x1, caption=null) {
   // 곡선 데이터 불러오기
   const curve = getCurve(
     {xMin: 0.0, xMax: 5.0, np: 101}
@@ -22,6 +20,8 @@ export function getFig(x0, x1) {
 
   const plot = Plot.plot({
     grid: true,
+    // figure: true,
+    caption: caption || '',
     x: {
       label: "x",
       domain: [0.0, 5.0],
@@ -35,7 +35,7 @@ export function getFig(x0, x1) {
     clip: "frame",
     marks: [
       Plot.line(curve, {x: "x", y: "y"}),
-      Plot.line(line, {x: "x", y: "y", stroke: "blue"}),
+      Plot.line(line, {x: "x", y: "y", stroke: "blue", strokeDasharray: 3}),
 
       Plot.ruleY([0], {stroke: "black"}),
       Plot.ruleX([x0, x1], {x: x => x, y1: 0.0, y2: d => func(d), strokeWidth: 1, strokeDasharray: 3}),
@@ -43,13 +43,11 @@ export function getFig(x0, x1) {
       Plot.dot([x0, x1], {x: x => x, y: 0, fill: "red"}),
       Plot.dot([x0, x1], {x: x => x, y: x => func(x), fill: "black"}),
 
-      Plot.axisX({label: "x", y: 0, text: null, fontSize: 12}),
-      Plot.axisY({label: "Y", x: 0, fontSize: 12, ticks: 8}),
+      Plot.axisX({label: "X", y: 0, labelAnchor:"center", labelArrow: "none", text: null, fontSize: 12}),
+      Plot.axisY({label: "Y", x: 0, labelAnchor:"center", labelArrow: "none", fontSize: 12, ticks: 8}),
 
       Plot.text([`x0\n${x0.toFixed(4)}`], {x: x0, y: 0, dy: 20, fontSize: 13, fontWeight: "bold"}),
       Plot.text([`x1\n${x1.toFixed(4)}`], {x: x1, y: 0, dy: 20, fontSize: 13, fill: "red", fontWeight: "bold"}),
-      // Plot.text(["b"], {x: xMax, y: func(xMax), dy: -anno_dy, fontSize: 15}),
-      // Plot.text(["mid"], {x: mid, y: func(mid), dy: -anno_dy, fontSize: 15}),
 
       Plot.frame()
     ]

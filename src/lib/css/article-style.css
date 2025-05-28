@@ -19,15 +19,12 @@ p {
   text-indent: 10px;
 }
 
-.fig-center {
-  display: flex;
-  justify-content: center;
-}
-
 table {
   border-collapse: collapse;
   text-align: center;
   width: 100%;
+  max-width: 500px;
+  table-layout: fixed;
 }
 
 table, th, td {
@@ -42,8 +39,18 @@ th {
   border-bottom: medium double black;
 }
 
+ th:nth-child(1) {
+  width: 20%;
+ }
+
 td {
   line-height: 1.7rem;
+}
+
+.fig-center {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
 }
 
 .title {
@@ -52,6 +59,16 @@ td {
 
 .subtitle {
   margin: 1rem auto;
+}
+
+.code-block {
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 800px) {
@@ -77,4 +94,8 @@ td {
     font-size: 0.8rem;
     line-height: 1.5rem;
   }
+
+  /* code * {
+    font-size: 0.5rem;
+  } */
 }
