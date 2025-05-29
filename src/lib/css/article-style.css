@@ -39,18 +39,27 @@ th {
   border-bottom: medium double black;
 }
 
- th:nth-child(1) {
+th:nth-child(1) {
   width: 20%;
- }
+}
 
 td {
   line-height: 1.7rem;
+}
+
+pre {
+  border-radius: 10px;
 }
 
 .fig-center {
   display: flex;
   justify-content: center;
   margin: 1.5rem auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 .title {
@@ -66,10 +75,6 @@ td {
   font-size: 0.8rem;
 }
 
-figcaption {
-  text-align: center;
-  font-size: 0.8rem;
-}
 
 @media (max-width: 800px) {
   section {

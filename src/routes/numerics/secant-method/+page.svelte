@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	// import { getFig } from './figure.js';
+	import { getFig } from './figure.js';
 
 	import Prism from 'prismjs/components/prism-core';
 	import 'prismjs/themes/prism-tomorrow.min.css';
@@ -12,6 +12,9 @@
 	import 'katex/dist/katex.min.css';
 
 	let { data } = $props();
+
+  const fig1 = getFig(2.1333, 3.5, 4.0);
+  const fig2 = getFig(1.6805, 2.1333, 3.5);
 
   onMount(() => {
 		Prism.highlightAll();
@@ -76,6 +79,33 @@
     <p>
       아래 예제는 Secant Method 를 사용하여 $y = x^2 - 2$ 의 해를 찾는 과정입니다.<br>
       초기 값 $x_0 = 3.5$ 와 ${String.raw`x_{\tiny -1} = 4.0`}$ 으로 부터 시작해서 $(4)$ 를 반복하여 해를 찾아가 보겠습니다.<br>
+    </p>
+
+    <p>
+      $(4)$ 에 $x_0$ 와 ${String.raw`x_{\tiny -1}`}$ 를 대입하면 Fig.1 과 같이 $x \approx 2.1333$ 를 얻을 수 있습니다.<br>
+    </p>
+
+    <div class="fig-center">
+      {@html fig1.outerHTML}
+    </div>
+
+    <p>
+      ${String.raw`x_{\tiny -1}`}$ 에 $3.5$ 를 할당하고, 
+      $x_0$ 에는 $2.1333$ 을 할당하여 다음 반복으로 넘어갑니다.<br>
+
+      위에서 구한 $x_0$ 와 ${String.raw`x_{\tiny -1}`}$ 를 
+      $(4)$ 에 대입하면 Fig.2 와 같이 $x \approx 1.6805$ 를 얻을 수 있습니다.
+    </p>
+
+    <p>
+    </p>
+
+    <div class="fig-center">
+      {@html fig2.outerHTML}
+    </div>
+    <p>
+      다시 ${String.raw`x_{\tiny -1}`}$ 에 $2.1333$ 을 할당하고, $x_0$ 에는 $1.6805$ 을 할당하여 위 과정을 반복합니다.<br>
+      반복을 진행하면 아래 표와 같이 $x$ 가 $\sqrt{2}$ 에 근사해 가는 것을 확인할 수 있습니다.
     </p>
   </section>
 
