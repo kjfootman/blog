@@ -11,6 +11,7 @@
 	import renderMathInElement from 'katex/dist/contrib/auto-render.js';
 	import 'katex/dist/katex.min.css';
 
+  /** @type {import('./$types.js').PageProps }*/
 	let { data } = $props();
 
   const fig1 = getFig(3.5, 2.0357);
@@ -38,7 +39,7 @@
 
 <article>
   <section>
-    <h2 class="title">Newton's Method</h2>
+    <h2 class="title">$\S$ Newton's Method</h2>
   </section>
 
   <section>

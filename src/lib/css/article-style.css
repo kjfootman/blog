@@ -17,6 +17,7 @@ p {
   font-size: 1rem;
   line-height: 2.1rem;
   text-indent: 10px;
+  margin: 1.0rem auto;
 }
 
 table {
@@ -54,7 +55,7 @@ pre {
 .fig-center {
   display: flex;
   justify-content: center;
-  margin: 1.5rem auto;
+  /* margin: 1em auto; */
 }
 
 figcaption {

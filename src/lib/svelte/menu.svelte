@@ -20,5 +20,9 @@
 		width: 100%;
 		font-weight: bold;
 		margin: 15px auto;
+		box-sizing: border-box;
+		padding: 0px 10px;
+
+		cursor: pointer;
 	}
 </style>
