@@ -58,7 +58,7 @@
       `}$$
 
       $(1)$ 의 해를 구하기 위해 $y$ 에 $0$ 을 대입하고 정리하면 $(2)$ 와 같습니다.
-      
+
       $${String.raw`
         \begin{equation}
           x = x_0 - \frac{f(x_0)}{f'(x_0)}
@@ -66,7 +66,7 @@
       `}$$
     </p>
     <p>
-      여기 까지는 Newtown's Method 와 동일합니다. 
+      여기 까지는 Newtown's Method 와 동일합니다.
       Secant Method 에서는 기울기 $f'(x_0)$ 를 $(3)$ 과 같이 근사화 합니다.
 
       $${String.raw`
@@ -75,7 +75,7 @@
         \end{equation}
       `}$$
 
-      ${String.raw`x_{\tiny -1}`}$ 은 $x_0$ 전단계의 $x$ 값으로써, 
+      ${String.raw`x_{\tiny -1}`}$ 은 $x_0$ 전단계의 $x$ 값으로써,
       초기 값은 ${String.raw`x_{\tiny -1} \ne x_0`}$ 를 만족하는 임의의 값을 사용합니다.
 
       $(3)$ 을 $(2)$ 에 대입하고 정리 하면 $(4)$ 와 같습니다.
@@ -110,10 +110,10 @@
     </div>
 
     <p>
-      ${String.raw`x_{\tiny -1}`}$ 에 $3.5$ 를 할당하고, 
+      ${String.raw`x_{\tiny -1}`}$ 에 $3.5$ 를 할당하고,
       $x_0$ 에는 $2.1333$ 을 할당하여 다음 반복을 수행합니다.
 
-      위에서 구한 $x_0$ 와 ${String.raw`x_{\tiny -1}`}$ 를 
+      위에서 구한 $x_0$ 와 ${String.raw`x_{\tiny -1}`}$ 를
       $(4)$ 에 대입하면 Fig.2 와 같이 $x \approx 1.6805$ 를 얻을 수 있습니다.
     </p>
 

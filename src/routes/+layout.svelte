@@ -18,6 +18,7 @@
 			"Newton's Method": '/numerics/newton-method',
 			"Secant Method": '/numerics/secant-method',
 			"Backward Euler Method": '/numerics/backward-euler-method',
+			"2nd Order ODE": '/numerics/2nd-order-ode',
 			CG: '/',
 			GMRES: '/numerics/gmres'
 		}
