@@ -20,8 +20,8 @@ export function getFig(yNumeric, yExact) {
       ticks: 10,
     },
     y: {
-      domain: [-0.2, 1.0],
-      ticks: 8
+      domain: [-0.6, 1.0],
+      ticks: 10
     },
     width: 600,
     clip: "frame",

@@ -143,6 +143,117 @@
 
 	<section>
 		<h3 class="subtitle">Example</h3>
+		<p>
+			아래 예제는 Backward Euler Method 를 사용하여
+			${String.raw`
+				2 \ddot{x} + \dot{x} + 2 x = 0
+			`}$ 의 해를 찾는 과정입니다.
+			초기값
+			${String.raw`
+				\begin{bmatrix}
+					\; \dot{x}^{\scriptsize 0} \; \\ x^{\scriptsize 0}
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					\; 0 \; \\ 1
+				\end{bmatrix}
+			`}$ 로 부터 시작하여 ${String.raw`\Delta t = 0.1`}$ 씩 전진하면서 $t = 10$ 까지 근사해를 구해보도록 하겠습니다.
+		</p>
+		<p>
+			식 $(5)$ 에 각각의 계수에 해당하는 값을 대입하면 아래와 같습니다.
+			$${String.raw`
+				\def\arraystretch{1.6}
+				\begin{equation}
+				\begin{bmatrix}
+					\enspace \dot{x}^{n+1} \enspace \\
+					x^{n+1}
+				\end{bmatrix}
+				% =
+				% \frac{2}{2 + (1) \cdot (0.1) + (2) \cdot ({0.1}^2)}
+				% \begin{bmatrix}
+				% 	1 & -\frac{(2) \cdot (0.1)}{2}  \\
+				% 	\enspace 0.1 & 1 + \frac{(1) \cdot (0.1)}{2} \enspace
+				% \end{bmatrix}
+
+				% \begin{bmatrix}
+				% 	\enspace \dot{x}^n \enspace \\
+				% 	x^n
+				% \end{bmatrix}
+				=
+				\frac{1}{1.06}
+				\begin{bmatrix}
+					1 & -0.1  \\
+					\enspace 0.1 & 1.05 \enspace
+				\end{bmatrix}
+
+				\begin{bmatrix}
+					\enspace \dot{x}^n \enspace \\
+					x^n
+				\end{bmatrix}
+				\end{equation}
+			`}$$
+		</p>
+		<p>
+			$t = 0.1$ 일 때
+			$${String.raw`
+				\def\arraystretch{1.6}
+				\begin{equation}
+				\begin{bmatrix}
+					\enspace \dot{x}^{1} \enspace \\
+					x^{1}
+				\end{bmatrix}
+				=
+				\frac{1}{1.06}
+				\begin{bmatrix}
+					1 & -0.1  \\
+					\enspace 0.1 & 1.05 \enspace
+				\end{bmatrix}
+
+				\begin{bmatrix}
+					\enspace \dot{x}^0 \enspace \\
+					x^0
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					\; -\frac{0.1}{1.06} \; \\ \frac{1.05}{1.06}
+				\end{bmatrix}
+				\end{equation}
+			`}$$
+			</p>
+			<p>
+			$t = 0.2$ 일 때
+			$${String.raw`
+				\def\arraystretch{1.6}
+				\begin{equation}
+				\begin{bmatrix}
+					\enspace \dot{x}^{2} \enspace \\
+					x^{2}
+				\end{bmatrix}
+				=
+				\frac{1}{1.06}
+				\begin{bmatrix}
+					1 & -0.1  \\
+					\enspace 0.1 & 1.05 \enspace
+				\end{bmatrix}
+
+				\begin{bmatrix}
+					\enspace \dot{x}^1 \enspace \\
+					x^1
+				\end{bmatrix}
+				=
+				\frac{1}{1.06^2}
+				\begin{bmatrix}
+					\; -0.205 \; \\ 1.0925
+				\end{bmatrix}
+				\end{equation}
+			`}$$
+		</p>
+
+		<p>
+			위 과정을 반복하면 아래 그림과 같이 근사해를 얻을 수 있습니다. 
+			그림에서 확인할 수 있는 것처럼 수치 에러 때문에 정확한 해(exact solution)와 차이가 발생하고 있습니다.
+			${String.raw`\Delta t`}$ 를 작에 적용할 경우 더 많은 계산이 필요하지만 수치 에러가 줄어듭니다.
+		</p>
 
     <div class="fig-center">
       {@html fig1.outerHTML}
